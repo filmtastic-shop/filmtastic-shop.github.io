@@ -12,7 +12,7 @@
         --bg: #fff;
         --accent: #111;
         --radius: 8px;
-        --gap: 14px;
+        --gap: 10px;
         --maxw: 800px;
       }
       * {
@@ -66,7 +66,7 @@
       }
       .card img {
         width: 100%;
-        aspect-ratio: 4/3;
+        aspect-ratio: 1;
         object-fit: cover;
         display: block;
       }
@@ -88,12 +88,6 @@
         color: var(--muted);
         font-size: 12px;
         margin-top: 32px;
-      }
-
-      @media (max-width: 580px) {
-        .grid {
-          grid-template-columns: 1fr;
-        }
       }
     </style>
   </head>
