@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Kodak Tri-X 400 - 35mm - чёрно-белая - катушка</title>
+    <style>
+      :root {
+        --fg: #111;
+        --muted: #666;
+        --bg: #fff;
+        --accent: #111;
+        --radius: 14px;
+        --gap: 14px;
+        --maxw: 640px; /* narrow page */
+      }
+      * {
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        background: var(--bg);
+        color: var(--fg);
+        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+          "Liberation Mono", "Courier New", monospace;
+        line-height: 1.5;
+      }
+      .wrap {
+        max-width: var(--maxw);
+        margin: 40px auto;
+        padding: 0 16px;
+      }
+      header {
+        text-align: center;
+        margin-bottom: 24px;
+      }
+      header .logo {
+        display: inline-block;
+        width: 72px;
+        height: 72px;
+        border-radius: 50%;
+        border: 2px solid var(--fg);
+        display: grid;
+        place-items: center;
+        font-weight: 700;
+        letter-spacing: 1px;
+        user-select: none;
+      }
+      main {
+        /* border: 1px solid #ddd; */
+        /* border-radius: var(--radius); */
+        padding: 16px;
+      }
+      .title {
+        font-size: 20px;
+        font-weight: 700;
+        margin: 4px 0 2px;
+      }
+      .price {
+        font-size: 18px;
+        color: var(--muted);
+        margin: 0 0 12px;
+      }
+      .media {
+        display: grid;
+        gap: var(--gap);
+      }
+      .hero {
+        width: 100%;
+        aspect-ratio: 4/3;
+        border-radius: 10px;
+        object-fit: cover;
+        border: 1px solid #e6e6e6;
+      }
+      .thumbs {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: var(--gap);
+      }
+      .thumbs img {
+        width: 100%;
+        aspect-ratio: 1/1;
+        object-fit: cover;
+        border-radius: 10px;
+        border: 1px solid #eee;
+        cursor: pointer;
+        transition: transform 0.12s ease;
+      }
+      .thumbs img:active {
+        transform: scale(0.98);
+      }
+
+      .buy {
+        display: inline-block;
+        margin-top: 16px;
+        padding: 12px 18px;
+        border-radius: 999px;
+        border: 2px solid var(--accent);
+        text-decoration: none;
+        color: var(--bg);
+        background: var(--accent);
+        font-weight: 700;
+        letter-spacing: 0.3px;
+      }
+      .buy:hover {
+        opacity: 0.92;
+      }
+
+      .desc {
+        margin-top: 16px;
+        color: var(--fg);
+        opacity: 0.9;
+      }
+
+      /* Very small screens: reduce columns */
+      @media (max-width: 420px) {
+        .thumbs {
+          grid-template-columns: repeat(3, 1fr);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <main>
+        <div class="title">Kodak Tri-X 400 - 35mm - чёрно-белая катушка</div>
+        <div class="price">UZS 180000</div>
+
+        <section class="media">
+          <!-- Main photo -->
+          <img
+            id="hero"
+            class="hero"
+            src="https://picsum.photos/id/1069/1200/900"
+            alt="Mono Canvas Tote main view"
+          />
+
+          <!-- Thumbnails (click to swap main photo; no external libs) -->
+          <div class="thumbs">
+            <img
+              src="https://picsum.photos/id/1069/400/400"
+              alt="Front view"
+              onclick="hero.src=this.src.replace('/400/400','/1200/900'); hero.alt=this.alt"
+            />
+            <img
+              src="https://picsum.photos/id/1070/400/400"
+              alt="Side view"
+              onclick="hero.src=this.src.replace('/400/400','/1200/900'); hero.alt=this.alt"
+            />
+            <img
+              src="https://picsum.photos/id/1071/400/400"
+              alt="Interior view"
+              onclick="hero.src=this.src.replace('/400/400','/1200/900'); hero.alt=this.alt"
+            />
+            <img
+              src="https://picsum.photos/id/1072/400/400"
+              alt="Detail view"
+              onclick="hero.src=this.src.replace('/400/400','/1200/900'); hero.alt=this.alt"
+            />
+          </div>
+        </section>
+
+        <p class="desc">
+          36 кадров, 400 iso, классическая зернистая структура для работы при
+          слабом освещении, мелкая зернистость, высокая резкость, широкий
+          диапазон экспозиции
+        </p>
+
+        <p class="desc">Для покупки → в Direct</p>
+
+        <!-- Buy button (replace href with your checkout link) -->
+        <!-- <a class="buy" href="https://example.com/checkout?sku=mono-canvas-tote"
+          >Buy now</a
+        > -->
+      </main>
+    </div>
+
+    <!-- No frameworks; tiny inline behavior only -->
+    <script>
+      // Improve swapping on keyboard focus/enter for accessibility
+      document.querySelectorAll(".thumbs img").forEach((img) => {
+        img.setAttribute("tabindex", "0");
+        img.addEventListener("keydown", (e) => {
+          if (e.key === "Enter" || e.key === " ") img.click();
+        });
+      });
+    </script>
+  </body>
+</html>
