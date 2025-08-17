@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Main — Simple Shop</title>
+    <style>
+      :root {
+        --fg: #111;
+        --muted: #666;
+        --bg: #fff;
+        --accent: #111;
+        --radius: 14px;
+        --gap: 14px;
+        --maxw: 800px;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        background: var(--bg);
+        color: var(--fg);
+        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+          "Liberation Mono", "Courier New", monospace;
+        line-height: 1.5;
+      }
+      .wrap {
+        max-width: var(--maxw);
+        margin: 40px auto;
+        padding: 0 16px;
+      }
+      header {
+        text-align: center;
+        margin-bottom: 32px;
+      }
+      header .logo {
+        display: inline-block;
+        width: 72px;
+        height: 72px;
+        border-radius: 50%;
+        border: 2px solid var(--fg);
+        display: grid;
+        place-items: center;
+        font-weight: 700;
+        letter-spacing: 1px;
+        user-select: none;
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--gap);
+      }
+      .card {
+        border: 1px solid #ddd;
+        border-radius: var(--radius);
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        text-decoration: none;
+        color: inherit;
+      }
+      .card img {
+        width: 100%;
+        aspect-ratio: 4/3;
+        object-fit: cover;
+        display: block;
+      }
+      .card-body {
+        padding: 12px;
+      }
+      .title {
+        font-weight: 700;
+        font-size: 16px;
+        margin: 0 0 4px;
+      }
+      .price {
+        color: var(--muted);
+        font-size: 14px;
+        margin: 0;
+      }
+      footer {
+        text-align: center;
+        color: var(--muted);
+        font-size: 12px;
+        margin-top: 32px;
+      }
+
+      @media (max-width: 580px) {
+        .grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <main>
+        <div class="grid">
+          <a class="card" href="kodak-color-plus-200-35mm.html">
+            <img src="?" />
+            <div class="card-body">
+              <div class="title">Kodak Color Plus 200 - 35mm - цветная</div>
+              <div class="price">UZS 190000</div>
+            </div>
+          </a>
+
+          <a class="card" href="kodak-gold-200-35mm.html">
+            <img src="?" />
+            <div class="card-body">
+              <div class="title">Kodak Gold 200 - 35mm - цветная</div>
+              <div class="price">UZS 180000</div>
+            </div>
+          </a>
+
+          <a class="card" href="kodak-ultramax-400-35mm.html">
+            <img src="?" />
+            <div class="card-body">
+              <div class="title">Kodak Ultramax 400 - 35mm - цветная</div>
+              <div class="price">UZS 200000</div>
+            </div>
+          </a>
+
+          <a class="card" href="kodak-pro-image-100-35mm.html">
+            <img src="?" />
+            <div class="card-body">
+              <div class="title">Kodak Pro Image 100 - 35mm - цветная</div>
+              <div class="price">UZS 190000</div>
+            </div>
+          </a>
+
+          <a class="card" href="kodak-tri-x-4000-35mm-bw.html">
+            <img src="?" />
+            <div class="card-body">
+              <div class="title">Kodak Tri-X 400 - 35mm - чёрно-белая</div>
+              <div class="price">UZS 180000</div>
+            </div>
+          </a>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>
