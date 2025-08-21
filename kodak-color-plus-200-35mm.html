@@ -70,7 +70,7 @@
       }
       .hero {
         width: 100%;
-        aspect-ratio: 4/3;
+        aspect-ratio: 1;
         border-radius: 10px;
         object-fit: cover;
         border: 1px solid #e6e6e6;
@@ -131,11 +131,18 @@
 
         <section class="media">
           <!-- Main photo -->
-          <img id="hero" class="hero" src="?" />
+          <img
+            id="hero"
+            class="hero"
+            src="examples/kodak-color-plus-200-35mm/pic0.jpeg"
+          />
 
           <!-- Thumbnails (click to swap main photo; no external libs) -->
           <div class="thumbs">
-            <img src="?" onclick="hero.src='?'" />
+            <img
+              src="examples/kodak-color-plus-200-35mm/pic0.jpeg"
+              onclick="hero.src='examples/kodak-color-plus-200-35mm/pic0.jpeg'"
+            />
             <img
               src="examples/kodak-color-plus-200-35mm/pic1.jpeg"
               onclick="hero.src='examples/kodak-color-plus-200-35mm/pic1.jpeg'"
