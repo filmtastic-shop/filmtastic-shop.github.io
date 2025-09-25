@@ -1,210 +1,203 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>KODAK ULTRAMAX 400 - 35MM - ЦВЕТНАЯ</title>
-    <link rel="icon" type="image/x-icon" href="favicon.ico" />
-    <style>
-      :root {
-        --fg: #111;
-        --muted: #666;
-        --bg: #fff;
-        --accent: #111;
-        --radius: 14px;
-        --gap: 14px;
-        --maxw: 640px; /* narrow page */
-      }
-      * {
-        box-sizing: border-box;
-      }
-      html,
-      body {
-        margin: 0;
-        padding: 0;
-        background: var(--bg);
-        color: var(--fg);
-        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
-          "Liberation Mono", "Courier New", monospace;
-        line-height: 1.5;
-      }
-      .wrap {
-        max-width: var(--maxw);
-        margin: 40px auto;
-        padding: 0 16px;
-      }
-      header {
-        text-align: center;
-        margin-bottom: 24px;
-      }
-      header .logo {
-        display: inline-block;
-        width: 72px;
-        height: 72px;
-        border-radius: 50%;
-        border: 2px solid var(--fg);
-        display: grid;
-        place-items: center;
-        font-weight: 700;
-        letter-spacing: 1px;
-        user-select: none;
-      }
-      main {
-        /* border: 1px solid #ddd; */
-        /* border-radius: var(--radius); */
-        padding: 16px;
-      }
-      .title {
-        font-size: 20px;
-        font-weight: 700;
-        margin: 4px 0 2px;
-      }
-      .price {
-        font-size: 18px;
-        color: var(--muted);
-        margin: 0 0 12px;
-      }
-      .media {
-        display: grid;
-        gap: var(--gap);
-      }
-      .hero {
-        width: 100%;
-        aspect-ratio: 1;
-        border-radius: 10px;
-        object-fit: cover;
-        border: 1px solid #e6e6e6;
-      }
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>KODAK ULTRAMAX 400 - 35MM - ЦВЕТНАЯ</title>
+  <link rel="icon" type="image/x-icon" href="favicon.ico" />
+  <style>
+    :root {
+      --fg: #000;
+      --muted: #00000080;
+      --bg: rgb(206, 167, 110);
+      --accent: #000;
+      --radius: 1.5rem;
+      --gap: 14px;
+      --maxw: 640px;
+      /* narrow page */
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      background: var(--bg);
+      color: var(--fg);
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+        "Liberation Mono", "Courier New", monospace;
+      line-height: 1.5;
+    }
+
+    .wrap {
+      max-width: var(--maxw);
+      margin: 40px auto;
+      padding: 0 16px;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 24px;
+    }
+
+    header .logo {
+      display: inline-block;
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      border: 2px solid var(--fg);
+      display: grid;
+      place-items: center;
+      font-weight: 700;
+      letter-spacing: 1px;
+      user-select: none;
+    }
+
+    main {
+      /* border: 1px solid #ddd; */
+      /* border-radius: var(--radius); */
+      padding: 16px;
+    }
+
+    .title {
+      font-size: 20px;
+      font-weight: 700;
+      margin: 4px 0 2px;
+    }
+
+    .price {
+      font-size: 18px;
+      color: var(--muted);
+      margin: 0 0 12px;
+    }
+
+    .media {
+      display: grid;
+      gap: var(--gap);
+    }
+
+    .hero {
+      width: 100%;
+      aspect-ratio: 1;
+      border-radius: var(--radius);
+      object-fit: cover;
+    }
+
+    .thumbs {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: var(--gap);
+    }
+
+    .thumbs img {
+      width: 100%;
+      aspect-ratio: 1/1;
+      object-fit: cover;
+      border-radius: var(--radius);
+      cursor: pointer;
+      transition: transform 0.12s ease;
+    }
+
+    .thumbs img:active {
+      transform: scale(0.98);
+    }
+
+    .buy {
+      display: inline-block;
+      margin-top: 16px;
+      padding: 12px 18px;
+      border-radius: 999px;
+      border: 2px solid var(--accent);
+      text-decoration: none;
+      color: var(--bg);
+      background: var(--accent);
+      font-weight: 700;
+      letter-spacing: 0.3px;
+    }
+
+    .buy:hover {
+      opacity: 0.92;
+    }
+
+    .desc {
+      margin-top: 16px;
+      color: var(--fg);
+      opacity: 0.9;
+    }
+
+    /* Very small screens: reduce columns */
+    @media (max-width: 420px) {
       .thumbs {
-        display: grid;
-        grid-template-columns: repeat(4, minmax(0, 1fr));
-        gap: var(--gap);
+        grid-template-columns: repeat(3, 1fr);
       }
-      .thumbs img {
-        width: 100%;
-        aspect-ratio: 1/1;
-        object-fit: cover;
-        border-radius: 10px;
-        border: 1px solid #eee;
-        cursor: pointer;
-        transition: transform 0.12s ease;
-      }
-      .thumbs img:active {
-        transform: scale(0.98);
-      }
+    }
+  </style>
+</head>
 
-      .buy {
-        display: inline-block;
-        margin-top: 16px;
-        padding: 12px 18px;
-        border-radius: 999px;
-        border: 2px solid var(--accent);
-        text-decoration: none;
-        color: var(--bg);
-        background: var(--accent);
-        font-weight: 700;
-        letter-spacing: 0.3px;
-      }
-      .buy:hover {
-        opacity: 0.92;
-      }
+<body>
+  <div class="wrap">
+    <main>
+      <div class="title">KODAK ULTRAMAX 400 - 35MM - ЦВЕТНАЯ КАТУШКА</div>
+      <div class="price">РАСПРОДАНО <s>UZS 200000</s></div>
 
-      .desc {
-        margin-top: 16px;
-        color: var(--fg);
-        opacity: 0.9;
-      }
+      <section class="media">
+        <!-- Main photo -->
+        <img id="hero" class="hero" src="examples/kodak-ultramax-400-35mm/pic-1.jpeg" />
 
-      /* Very small screens: reduce columns */
-      @media (max-width: 420px) {
-        .thumbs {
-          grid-template-columns: repeat(3, 1fr);
-        }
-      }
-    </style>
-  </head>
-  <body>
-    <div class="wrap">
-      <main>
-        <div class="title">KODAK ULTRAMAX 400 - 35MM - ЦВЕТНАЯ КАТУШКА</div>
-        <div class="price">РАСПРОДАНО <s>UZS 200000</s></div>
+        <!-- Thumbnails (click to swap main photo; no external libs) -->
+        <div class="thumbs">
+          <img src="examples/kodak-ultramax-400-35mm/pic-1.jpeg"
+            onclick="hero.src='examples/kodak-ultramax-400-35mm/pic-1.jpeg'" />
+          <img src="examples/kodak-ultramax-400-35mm/pic0.jpeg"
+            onclick="hero.src='examples/kodak-ultramax-400-35mm/pic0.jpeg'" />
+          <img src="examples/kodak-ultramax-400-35mm/pic1.jpeg"
+            onclick="hero.src='examples/kodak-ultramax-400-35mm/pic1.jpeg'" />
+          <img src="examples/kodak-ultramax-400-35mm/pic2.jpeg"
+            onclick="hero.src='examples/kodak-ultramax-400-35mm/pic2.jpeg'" />
+          <img src="examples/kodak-ultramax-400-35mm/pic3.jpeg"
+            onclick="hero.src='examples/kodak-ultramax-400-35mm/pic3.jpeg'" />
+        </div>
+      </section>
 
-        <section class="media">
-          <!-- Main photo -->
-          <img
-            id="hero"
-            class="hero"
-            src="examples/kodak-ultramax-400-35mm/pic-1.jpeg"
-          />
+      <p class="desc">
+        36 кадров, 400 iso, процесс C-41, простая в использовании
+        высокоскоростная пленка для обычной цветной фотосъемки, более высокое
+        качество снимков при слабом освещении и меньшем количестве выдержки,
+        лучшие результаты при использовании зум-объективов, более качественные
+        снимки в режиме "стоп-кадра" и меньшее воздействие дрожания камеры,
+        превосходную резкость и мелкозернистость для получения четких
+        изображений; стабильно яркие цвета с точным воспроизведением тона кожи
+      </p>
 
-          <!-- Thumbnails (click to swap main photo; no external libs) -->
-          <div class="thumbs">
-            <img
-              src="examples/kodak-ultramax-400-35mm/pic-1.jpeg"
-              onclick="hero.src='examples/kodak-ultramax-400-35mm/pic-1.jpeg'"
-            />
-            <img
-              src="examples/kodak-ultramax-400-35mm/pic0.jpeg"
-              onclick="hero.src='examples/kodak-ultramax-400-35mm/pic0.jpeg'"
-            />
-            <img
-              src="examples/kodak-ultramax-400-35mm/pic1.jpeg"
-              onclick="hero.src='examples/kodak-ultramax-400-35mm/pic1.jpeg'"
-            />
-            <img
-              src="examples/kodak-ultramax-400-35mm/pic2.jpeg"
-              onclick="hero.src='examples/kodak-ultramax-400-35mm/pic2.jpeg'"
-            />
-            <img
-              src="examples/kodak-ultramax-400-35mm/pic3.jpeg"
-              onclick="hero.src='examples/kodak-ultramax-400-35mm/pic3.jpeg'"
-            />
-          </div>
-        </section>
+      <p class="desc">
+        Для примеров использованы снимки авторов
+        <a target="_blank" href="https://instagram.com/sabina.suleymanoglu/">@sabina.suleymanoglu</a>,
+        <a target="_blank" href="https://instagram.com/electrofocus/">@electrofocus</a>
+      </p>
 
-        <p class="desc">
-          36 кадров, 400 iso, процесс C-41, простая в использовании
-          высокоскоростная пленка для обычной цветной фотосъемки, более высокое
-          качество снимков при слабом освещении и меньшем количестве выдержки,
-          лучшие результаты при использовании зум-объективов, более качественные
-          снимки в режиме "стоп-кадра" и меньшее воздействие дрожания камеры,
-          превосходную резкость и мелкозернистость для получения четких
-          изображений; стабильно яркие цвета с точным воспроизведением тона кожи
-        </p>
+      <a class="desc" href="https://instagram.com/filmtastic.shop" target="_blank">ДЛЯ ПОКУПКИ → В DIRECT</a>
 
-        <p class="desc">
-          Для примеров использованы снимки авторов
-          <a target="_blank" href="https://instagram.com/sabina.suleymanoglu/"
-            >@sabina.suleymanoglu</a
-          >,
-          <a target="_blank" href="https://instagram.com/electrofocus/"
-            >@electrofocus</a
-          >
-        </p>
-
-        <a
-          class="desc"
-          href="https://instagram.com/filmtastic.shop"
-          target="_blank"
-          >ДЛЯ ПОКУПКИ → В DIRECT</a
-        >
-
-        <!-- Buy button (replace href with your checkout link) -->
-        <!-- <a class="buy" href="https://example.com/checkout?sku=mono-canvas-tote"
+      <!-- Buy button (replace href with your checkout link) -->
+      <!-- <a class="buy" href="https://example.com/checkout?sku=mono-canvas-tote"
           >Buy now</a
         > -->
-      </main>
-    </div>
+    </main>
+  </div>
 
-    <!-- No frameworks; tiny inline behavior only -->
-    <script>
-      // Improve swapping on keyboard focus/enter for accessibility
-      document.querySelectorAll(".thumbs img").forEach((img) => {
-        img.setAttribute("tabindex", "0");
-        img.addEventListener("keydown", (e) => {
-          if (e.key === "Enter" || e.key === " ") img.click();
-        });
+  <!-- No frameworks; tiny inline behavior only -->
+  <script>
+    // Improve swapping on keyboard focus/enter for accessibility
+    document.querySelectorAll(".thumbs img").forEach((img) => {
+      img.setAttribute("tabindex", "0");
+      img.addEventListener("keydown", (e) => {
+        if (e.key === "Enter" || e.key === " ") img.click();
       });
-    </script>
-  </body>
+    });
+  </script>
+</body>
+
 </html>

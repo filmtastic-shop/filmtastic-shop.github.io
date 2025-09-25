@@ -1,141 +1,187 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>КАТАЛОГ - FILMTASTIC</title>
-    <link rel="icon" type="image/x-icon" href="favicon.ico" />
-    <style>
-      :root {
-        --fg: #111;
-        --muted: #666;
-        --bg: #fff;
-        --accent: #111;
-        --radius: 8px;
-        --gap: 10px;
-        --maxw: 800px;
-      }
-      * {
-        box-sizing: border-box;
-      }
-      html,
-      body {
-        margin: 0;
-        padding: 0;
-        background: var(--bg);
-        color: var(--fg);
-        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
-          "Liberation Mono", "Courier New", monospace;
-        line-height: 1.5;
-      }
-      .wrap {
-        max-width: var(--maxw);
-        margin: 40px auto;
-        padding: 0 16px;
-      }
-      .grid {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: var(--gap);
-      }
-      .card {
-        border: 1px solid #ddd;
-        border-radius: var(--radius);
-        overflow: hidden;
-        display: flex;
-        flex-direction: column;
-        text-decoration: none;
-        color: inherit;
-      }
-      .card img {
-        width: 100%;
-        aspect-ratio: 1;
-        object-fit: cover;
-        display: block;
-      }
-      .card-body {
-        padding: 12px;
-      }
-      .title {
-        font-weight: 700;
-        font-size: 16px;
-        margin: 0 0 4px;
-      }
-      .price {
-        color: var(--muted);
-        font-size: 14px;
-        margin: 0;
-      }
-      footer {
-        text-align: center;
-        color: var(--muted);
-        font-size: 12px;
-        margin-top: 32px;
-      }
-      header {
-        display: flex;
-        justify-content: center; /* center horizontally */
-        align-items: center; /* center vertically (if taller header) */
-        margin-bottom: 32px;
-      }
 
-      .logo img {
-        max-width: 100px; /* adjust as needed */
-        height: auto;
-        display: block; /* remove inline spacing */
-      }
-    </style>
-  </head>
-  <body>
-    <div class="wrap">
-      <header>
-        <div class="logo">
-          <img src="logo.svg" />
-        </div>
-      </header>
-      <main>
-        <div class="grid">
-          <a class="card" href="kodak-color-plus-200-35mm.html">
-            <img src="examples/kodak-color-plus-200-35mm/pic0.jpeg" />
-            <div class="card-body">
-              <div class="title">KODAK COLOR PLUS 200 - 35MM - ЦВЕТНАЯ</div>
-              <div class="price">РАСПРОДАНО <s>UZS 190000</s></div>
-            </div>
-          </a>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>КАТАЛОГ - FILMTASTIC</title>
+  <link rel="icon" type="image/x-icon" href="favicon.ico" />
+  <style>
+    :root {
+      --fg: #111;
+      --muted: #000000a2;
+      --bg: rgb(242, 242, 238);
+      --accent: #111;
+      --radius: 1.5rem;
+      --gap: 15px;
+      --maxw: 800px;
+    }
 
-          <a class="card" href="kodak-gold-200-35mm.html">
-            <img src="examples/kodak-gold-200-35mm/pic-1.jpeg" />
-            <div class="card-body">
-              <div class="title">KODAK GOLD 200 - 35MM - ЦВЕТНАЯ</div>
-              <div class="price">РАСПРОДАНО <s>UZS 180000</s></div>
-            </div>
-          </a>
+    * {
+      box-sizing: border-box;
+    }
 
-          <a class="card" href="kodak-ultramax-400-35mm.html">
-            <img src="examples/kodak-ultramax-400-35mm/pic-1.jpeg" />
-            <div class="card-body">
-              <div class="title">KODAK ULTRAMAX 400 - 35MM - ЦВЕТНАЯ</div>
-              <div class="price">РАСПРОДАНО <s>UZS 200000</s></div>
-            </div>
-          </a>
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      background: var(--bg);
+      color: var(--fg);
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+        "Liberation Mono", "Courier New", monospace;
+      line-height: 1.5;
+    }
 
-          <a class="card" href="kodak-pro-image-100-35mm.html">
-            <img src="examples/kodak-pro-image-100-35mm/pic0.jpeg" />
-            <div class="card-body">
-              <div class="title">KODAK PRO IMAGE 100 - 35MM - ЦВЕТНАЯ</div>
-              <div class="price">РАСПРОДАНО <s>UZS 190000</s></div>
-            </div>
-          </a>
+    .wrap {
+      max-width: var(--maxw);
+      margin: 40px auto;
+      padding: 0 16px;
+    }
 
-          <a class="card" href="kodak-tri-x-400-35mm-bw.html">
-            <img src="examples/kodak-tri-x-400-35mm-bw/pic0.jpeg" />
-            <div class="card-body">
-              <div class="title">KODAK TRI-X 400 - 35MM - ЧЁРНО-БЕЛАЯ</div>
-              <div class="price">UZS 180000</div>
-            </div>
-          </a>
-        </div>
-      </main>
-    </div>
-  </body>
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: var(--gap);
+    }
+
+    .card {
+      border-style: solid;
+      border-width: 1px;
+      border-color: var(--bg);
+      border-radius: var(--radius);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      text-decoration: none;
+      color: inherit;
+      background-color: #fff;
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      border-color: rgb(36 36 35 / 0.5);
+    }
+
+    .card-disabled {
+      border-color: rgb(36 36 35 / 0.5);
+      background-color: var(--bg);
+      color: var(--muted);
+    }
+
+    .card img {
+      width: 100%;
+      aspect-ratio: 1;
+      object-fit: cover;
+      display: block;
+    }
+
+    .card-body {
+      padding: 12px;
+    }
+
+    .title {
+      font-weight: 700;
+      font-size: 16px;
+      margin: 0 0 4px;
+    }
+
+    .price {
+      color: var(--muted);
+      font-size: 14px;
+      margin: 0;
+    }
+
+    footer {
+      text-align: center;
+      color: var(--muted);
+      font-size: 12px;
+      margin-top: 32px;
+    }
+
+    header {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 60px;
+    }
+
+    .logo img {
+      max-width: 100px;
+      /* adjust as needed */
+      height: auto;
+      display: block;
+      /* remove inline spacing */
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <header>
+      <div class="logo">
+        <img src="logo.svg" />
+      </div>
+    </header>
+    <main>
+      <div class="grid">
+        <a class="card" href="kodak-color-plus-200-35mm.html">
+          <img src="examples/kodak-color-plus-200-35mm/pic0.jpeg" />
+          <div class="card-body">
+            <div class="title">KODAK COLOR PLUS 200 - 35MM - ЦВЕТНАЯ</div>
+            <div class="price">РАСПРОДАНО <s>UZS 190000</s></div>
+          </div>
+        </a>
+
+        <a class="card" href="kodak-gold-200-35mm.html">
+          <img src="examples/kodak-gold-200-35mm/pic-1.jpeg" />
+          <div class="card-body">
+            <div class="title">KODAK GOLD 200 - 35MM - ЦВЕТНАЯ</div>
+            <div class="price">РАСПРОДАНО <s>UZS 180000</s></div>
+          </div>
+        </a>
+
+        <a class="card" href="kodak-ultramax-400-35mm.html">
+          <img src="examples/kodak-ultramax-400-35mm/pic-1.jpeg" />
+          <div class="card-body">
+            <div class="title">KODAK ULTRAMAX 400 - 35MM - ЦВЕТНАЯ</div>
+            <div class="price">РАСПРОДАНО <s>UZS 200000</s></div>
+          </div>
+        </a>
+
+        <a class="card" href="kodak-pro-image-100-35mm.html">
+          <img src="examples/kodak-pro-image-100-35mm/pic0.jpeg" />
+          <div class="card-body">
+            <div class="title">KODAK PRO IMAGE 100 - 35MM - ЦВЕТНАЯ</div>
+            <div class="price">РАСПРОДАНО <s>UZS 190000</s></div>
+          </div>
+        </a>
+
+        <a class="card" href="kodak-tri-x-400-35mm-bw.html">
+          <img src="examples/kodak-tri-x-400-35mm-bw/pic0.jpeg" />
+          <div class="card-body">
+            <div class="title">KODAK TRI-X 400 - 35MM - ЧЁРНО-БЕЛАЯ</div>
+            <div class="price">РАСПРОДАНО <s>UZS 180000</s></div>
+          </div>
+        </a>
+
+        <a class="card card-disabled">
+          <img src="examples/pattern.png" />
+          <div class="card-body">
+            <div class="title">KODAK PORTRA 400 - 120MM - ЦВЕТНАЯ</div>
+            <div class="price">СКОРО</div>
+          </div>
+        </a>
+
+        <a class="card card-disabled">
+          <img src="examples/pattern.png" />
+          <div class="card-body">
+            <div class="title">KODAK GOLD 200 - 120MM - ЦВЕТНАЯ</div>
+            <div class="price">СКОРО</div>
+          </div>
+        </a>
+      </div>
+    </main>
+  </div>
+</body>
+
 </html>
