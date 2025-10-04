@@ -1,185 +1,198 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>KODAK PRO IMAGE - ISO 100 - 35MM - ЦВЕТНАЯ</title>
-  <link rel="icon" type="image/x-icon" href="favicon.ico" />
-  <style>
-    :root {
-      --fg: #000;
-      --muted: #00000080;
-      --bg: rgb(250, 123, 62);
-      --accent: #000;
-      --radius: 1.5rem;
-      --gap: 14px;
-      --maxw: 640px;
-      /* narrow page */
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
-    html,
-    body {
-      margin: 0;
-      padding: 0;
-      background: var(--bg);
-      color: var(--fg);
-      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
-        "Liberation Mono", "Courier New", monospace;
-      line-height: 1.5;
-    }
-
-    .wrap {
-      max-width: var(--maxw);
-      margin: 40px auto;
-      padding: 0 16px;
-    }
-
-    header {
-      text-align: center;
-      margin-bottom: 24px;
-    }
-
-    main {
-      /* border: 1px solid #ddd; */
-      /* border-radius: var(--radius); */
-      padding: 16px;
-    }
-
-    .title {
-      font-size: 20px;
-      font-weight: 700;
-      margin: 4px 0 2px;
-    }
-
-    .price {
-      font-size: 18px;
-      color: var(--muted);
-      margin: 0 0 12px;
-    }
-
-    .media {
-      display: grid;
-      gap: var(--gap);
-    }
-
-    .hero {
-      width: 100%;
-      aspect-ratio: 1;
-      border-radius: 1.5rem;
-      object-fit: cover;
-    }
-
-    .thumbs {
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: var(--gap);
-    }
-
-    .thumbs img {
-      width: 100%;
-      aspect-ratio: 1/1;
-      object-fit: cover;
-      border-radius: 1.5rem;
-      cursor: pointer;
-      transition: transform 0.12s ease;
-    }
-
-    .thumbs img:active {
-      transform: scale(0.98);
-    }
-
-    .buy {
-      display: inline-block;
-      margin-top: 16px;
-      padding: 12px 18px;
-      border-radius: 999px;
-      border: 2px solid var(--accent);
-      text-decoration: none;
-      color: var(--bg);
-      background: var(--accent);
-      font-weight: 700;
-      letter-spacing: 0.3px;
-    }
-
-    .buy:hover {
-      opacity: 0.92;
-    }
-
-    .desc {
-      margin-top: 16px;
-      color: var(--fg);
-      opacity: 0.9;
-    }
-
-    /* Very small screens: reduce columns */
-    @media (max-width: 420px) {
-      .thumbs {
-        grid-template-columns: repeat(3, 1fr);
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>KODAK PRO IMAGE - ISO 100 - 35MM - ЦВЕТНАЯ</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <style>
+      :root {
+        --fg: #000;
+        --muted: #00000080;
+        --bg: rgb(250, 123, 62);
+        --accent: #000;
+        --radius: 1.5rem;
+        --gap: 14px;
+        --maxw: 640px;
+        /* narrow page */
       }
-    }
-  </style>
-</head>
 
-<body>
-  <div class="wrap">
-    <main>
-      <div class="title">KODAK PRO IMAGE 100 - 35MM - ЦВЕТНАЯ КАТУШКА</div>
-      <div class="price">РАСПРОДАНО <s>UZS 190000</s></div>
+      * {
+        box-sizing: border-box;
+      }
 
-      <section class="media">
-        <!-- Main photo -->
-        <img id="hero" class="hero" src="examples/kodak-pro-image-100-35mm/pic0.jpeg" />
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        background: var(--bg);
+        color: var(--fg);
+        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+          "Liberation Mono", "Courier New", monospace;
+        line-height: 1.5;
+      }
 
-        <!-- Thumbnails (click to swap main photo; no external libs) -->
-        <div class="thumbs">
-          <img src="examples/kodak-pro-image-100-35mm/pic0.jpeg"
-            onclick="hero.src='examples/kodak-pro-image-100-35mm/pic0.jpeg'" />
-          <img src="examples/kodak-pro-image-100-35mm/pic1.jpeg"
-            onclick="hero.src='examples/kodak-pro-image-100-35mm/pic1.jpeg'" />
-          <img src="examples/kodak-pro-image-100-35mm/pic2.jpeg"
-            onclick="hero.src='examples/kodak-pro-image-100-35mm/pic2.jpeg'" />
-          <img src="examples/kodak-pro-image-100-35mm/pic3.jpeg"
-            onclick="hero.src='examples/kodak-pro-image-100-35mm/pic3.jpeg'" />
-        </div>
-      </section>
+      .wrap {
+        max-width: var(--maxw);
+        margin: 40px auto;
+        padding: 0 16px;
+      }
 
-      <p class="desc">
-        36 кадров, 100 iso, процесс C-41, высокая насыщенность цветов, точное
-        воспроизведение цвета и приятного оттенка кожи, а также хороший
-        диапазон экспозиции
-      </p>
+      header {
+        text-align: center;
+        margin-bottom: 24px;
+      }
 
-      <p class="desc">
-        Для примеров использованы снимки авторов
-        <a target="_blank" href="https://www.lomography.com/homes/anpifilm">@anpifilm</a>,
-        <a target="_blank" href="https://www.lomography.com/homes/wuj">@wuj</a>,
-        <a target="_blank" href="https://www.lomography.com/homes/alex35">@alex35</a>
-      </p>
+      main {
+        /* border: 1px solid #ddd; */
+        /* border-radius: var(--radius); */
+        padding: 16px;
+      }
 
-      <a class="desc" href="https://instagram.com/filmtastic.shop" target="_blank">ДЛЯ ПОКУПКИ → В DIRECT</a>
+      .title {
+        font-size: 20px;
+        font-weight: 700;
+        margin: 4px 0 2px;
+      }
 
-      <!-- Buy button (replace href with your checkout link) -->
-      <!-- <a class="buy" href="https://example.com/checkout?sku=mono-canvas-tote"
+      .price {
+        font-size: 18px;
+        color: var(--muted);
+        margin: 0 0 12px;
+      }
+
+      .media {
+        display: grid;
+        gap: var(--gap);
+      }
+
+      .hero {
+        width: 100%;
+        aspect-ratio: 1;
+        border-radius: 1.5rem;
+        object-fit: cover;
+      }
+
+      .thumbs {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: var(--gap);
+      }
+
+      .thumbs img {
+        width: 100%;
+        aspect-ratio: 1/1;
+        object-fit: cover;
+        border-radius: 1.5rem;
+        cursor: pointer;
+        transition: transform 0.12s ease;
+      }
+
+      .thumbs img:active {
+        transform: scale(0.98);
+      }
+
+      .buy {
+        display: inline-block;
+        margin-top: 16px;
+        padding: 12px 18px;
+        border-radius: 999px;
+        border: 2px solid var(--accent);
+        text-decoration: none;
+        color: var(--bg);
+        background: var(--accent);
+        font-weight: 700;
+        letter-spacing: 0.3px;
+      }
+
+      .buy:hover {
+        opacity: 0.92;
+      }
+
+      .desc {
+        margin-top: 16px;
+        color: var(--fg);
+        opacity: 0.9;
+      }
+
+      /* Very small screens: reduce columns */
+      @media (max-width: 420px) {
+        .thumbs {
+          grid-template-columns: repeat(3, 1fr);
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="wrap">
+      <main>
+        <div class="title">KODAK PRO IMAGE 100 - 35MM - ЦВЕТНАЯ КАТУШКА</div>
+        <div class="price">РАСПРОДАНО <s>UZS 190000</s></div>
+
+        <section class="media">
+          <!-- Main photo -->
+          <img
+            id="hero"
+            class="hero"
+            src="examples/kodak-pro-image-100-35mm/pic0.jpeg"
+          />
+
+          <!-- Thumbnails (click to swap main photo; no external libs) -->
+          <div class="thumbs">
+            <img
+              src="examples/kodak-pro-image-100-35mm/pic0.jpeg"
+              onclick="hero.src='examples/kodak-pro-image-100-35mm/pic0.jpeg'"
+            />
+            <img
+              src="examples/kodak-pro-image-100-35mm/pic1.jpeg"
+              onclick="hero.src='examples/kodak-pro-image-100-35mm/pic1.jpeg'"
+            />
+            <img
+              src="examples/kodak-pro-image-100-35mm/pic2.jpeg"
+              onclick="hero.src='examples/kodak-pro-image-100-35mm/pic2.jpeg'"
+            />
+            <img
+              src="examples/kodak-pro-image-100-35mm/pic3.jpeg"
+              onclick="hero.src='examples/kodak-pro-image-100-35mm/pic3.jpeg'"
+            />
+          </div>
+        </section>
+
+        <p class="desc">
+          36 кадров, 100 iso, процесс C-41, высокая насыщенность цветов, точное
+          воспроизведение цвета и приятного оттенка кожи, а также хороший
+          диапазон экспозиции
+        </p>
+
+        <p class="desc">
+          Для примеров использованы снимки авторов
+          <a target="_blank" href="https://www.lomography.com/homes/anpifilm"
+            >@anpifilm</a
+          >,
+          <a target="_blank" href="https://www.lomography.com/homes/wuj">@wuj</a
+          >,
+          <a target="_blank" href="https://www.lomography.com/homes/alex35"
+            >@alex35</a
+          >
+        </p>
+
+        <!-- Buy button (replace href with your checkout link) -->
+        <!-- <a class="buy" href="https://example.com/checkout?sku=mono-canvas-tote"
           >Buy now</a
         > -->
-    </main>
-  </div>
+      </main>
+    </div>
 
-  <!-- No frameworks; tiny inline behavior only -->
-  <script>
-    // Improve swapping on keyboard focus/enter for accessibility
-    document.querySelectorAll(".thumbs img").forEach((img) => {
-      img.setAttribute("tabindex", "0");
-      img.addEventListener("keydown", (e) => {
-        if (e.key === "Enter" || e.key === " ") img.click();
+    <!-- No frameworks; tiny inline behavior only -->
+    <script>
+      // Improve swapping on keyboard focus/enter for accessibility
+      document.querySelectorAll(".thumbs img").forEach((img) => {
+        img.setAttribute("tabindex", "0");
+        img.addEventListener("keydown", (e) => {
+          if (e.key === "Enter" || e.key === " ") img.click();
+        });
       });
-    });
-  </script>
-</body>
-
+    </script>
+  </body>
 </html>
