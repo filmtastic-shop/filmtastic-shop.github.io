@@ -1,235 +1,244 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>КАТАЛОГ - FILMTASTIC</title>
-    <link rel="icon" type="image/x-icon" href="favicon.ico" />
-    <style>
-      :root {
-        --fg: #111;
-        --muted: #000000a2;
-        --bg: rgb(242, 242, 238);
-        --accent: #111;
-        --radius: 1.5rem;
-        --gap: 15px;
-        --maxw: 800px;
-      }
 
-      * {
-        box-sizing: border-box;
-      }
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>КАТАЛОГ - FILMTASTIC</title>
+  <link rel="icon" type="image/x-icon" href="favicon.ico" />
+  <style>
+    :root {
+      --fg: #111;
+      --muted: #000000a2;
+      --bg: rgb(242, 242, 238);
+      --accent: #111;
+      --radius: 1.5rem;
+      --gap: 15px;
+      --maxw: 800px;
+    }
 
-      html,
-      body {
-        margin: 0;
-        padding: 0;
-        background: var(--bg);
-        color: var(--fg);
-        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
-          "Liberation Mono", "Courier New", monospace;
-        line-height: 1.5;
-      }
+    * {
+      box-sizing: border-box;
+    }
 
-      .wrap {
-        max-width: var(--maxw);
-        margin: 40px auto;
-        padding: 0 16px;
-      }
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      background: var(--bg);
+      color: var(--fg);
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+        "Liberation Mono", "Courier New", monospace;
+      line-height: 1.5;
+    }
 
-      .grid {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: var(--gap);
-      }
+    .wrap {
+      max-width: var(--maxw);
+      margin: 40px auto;
+      padding: 0 16px;
+    }
 
-      .card {
-        border-style: solid;
-        border-width: 1px;
-        border-color: var(--bg);
-        border-radius: var(--radius);
-        overflow: hidden;
-        display: flex;
-        flex-direction: column;
-        text-decoration: none;
-        color: inherit;
-        background-color: #fff;
-        transition: 0.3s;
-      }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: var(--gap);
+    }
 
-      .card:hover {
-        border-color: rgb(36 36 35 / 0.5);
-      }
+    .card {
+      border-style: solid;
+      border-width: 1px;
+      border-color: var(--bg);
+      border-radius: var(--radius);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      text-decoration: none;
+      color: inherit;
+      background-color: #fff;
+      transition: 0.3s;
+    }
 
-      .card-disabled {
-        border-color: rgb(36 36 35 / 0.5);
-        background-color: var(--bg);
-        color: var(--muted);
-      }
+    .card:hover {
+      border-color: rgb(36 36 35 / 0.5);
+    }
 
-      .card img {
-        width: 100%;
-        aspect-ratio: 1;
-        object-fit: cover;
-        display: block;
-      }
+    .card-disabled {
+      border-color: rgb(36 36 35 / 0.5);
+      background-color: var(--bg);
+      color: var(--muted);
+    }
 
-      .card-body {
-        padding: 12px;
-      }
+    .card img {
+      width: 100%;
+      aspect-ratio: 1;
+      object-fit: cover;
+      display: block;
+    }
 
-      .title {
-        font-weight: 700;
-        font-size: 16px;
-        margin: 0 0 4px;
-      }
+    .card-body {
+      padding: 12px;
+    }
 
-      .price {
-        color: var(--muted);
-        font-size: 14px;
-        margin: 0;
-      }
+    .title {
+      font-weight: 700;
+      font-size: 16px;
+      margin: 0 0 4px;
+    }
 
-      footer {
-        text-align: center;
-        color: var(--muted);
-        font-size: 12px;
-        margin-top: 32px;
-      }
+    .price {
+      color: var(--muted);
+      font-size: 14px;
+      margin: 0;
+    }
 
-      header {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-bottom: 60px;
-      }
+    footer {
+      text-align: center;
+      color: var(--muted);
+      font-size: 12px;
+      margin-top: 32px;
+    }
 
-      .logo img {
-        max-width: 100px;
-        /* adjust as needed */
-        height: auto;
-        display: block;
-        /* remove inline spacing */
-      }
-    </style>
-  </head>
+    header {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 60px;
+    }
 
-  <body>
-    <div class="wrap">
-      <header>
-        <div class="logo">
-          <img src="logo.svg" />
-        </div>
-      </header>
-      <main>
-        <div class="grid">
-          <a class="card" href="kodak-color-plus-200-35mm.html">
-            <img src="examples/kodak-color-plus-200-35mm/pic0.jpeg" />
-            <div class="card-body">
-              <div class="title">
-                KODAK COLOR PLUS - ISO 200 - 35MM - ЦВЕТНАЯ
-              </div>
-              <div class="price">UZS 190000</div>
+    .logo img {
+      max-width: 100px;
+      /* adjust as needed */
+      height: auto;
+      display: block;
+      /* remove inline spacing */
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <header>
+      <div class="logo">
+        <img src="logo.svg" />
+      </div>
+    </header>
+    <main>
+      <h2>35MM</h2>
+      <div class="grid">
+        <a class="card" href="kodak-color-plus-200-35mm.html">
+          <img src="examples/kodak-color-plus-200-35mm/pic0.jpeg" />
+          <div class="card-body">
+            <div class="title">
+              KODAK COLOR PLUS - ISO 200 - 35MM - ЦВЕТНАЯ
             </div>
-          </a>
+            <div class="price">UZS 190000</div>
+          </div>
+        </a>
 
-          <a class="card" href="kodak-gold-200-35mm.html">
-            <img src="examples/kodak-gold-200-35mm/pic-1.jpeg" />
-            <div class="card-body">
-              <div class="title">KODAK GOLD - ISO 200 - 35MM - ЦВЕТНАЯ</div>
-              <div class="price">UZS 180000</div>
-            </div>
-          </a>
+        <a class="card" href="kodak-gold-200-35mm.html">
+          <img src="examples/kodak-gold-200-35mm/pic-1.jpeg" />
+          <div class="card-body">
+            <div class="title">KODAK GOLD - ISO 200 - 35MM - ЦВЕТНАЯ</div>
+            <div class="price">UZS 180000</div>
+          </div>
+        </a>
 
-          <a class="card" href="kodak-ultramax-400-35mm.html">
-            <img src="examples/kodak-ultramax-400-35mm/pic-1.jpeg" />
-            <div class="card-body">
-              <div class="title">KODAK ULTRAMAX - ISO 400 - 35MM - ЦВЕТНАЯ</div>
-              <div class="price">UZS 200000</div>
-            </div>
-          </a>
+        <a class="card" href="kodak-ultramax-400-35mm.html">
+          <img src="examples/kodak-ultramax-400-35mm/pic-1.jpeg" />
+          <div class="card-body">
+            <div class="title">KODAK ULTRAMAX - ISO 400 - 35MM - ЦВЕТНАЯ</div>
+            <div class="price">UZS 200000</div>
+          </div>
+        </a>
 
-          <a class="card">
-            <img src="examples/pattern.jpeg" />
-            <div class="card-body">
-              <div class="title">KODAK PORTRA - ISO 400 - 120MM - ЦВЕТНАЯ</div>
-              <div class="price">UZS 260000</div>
-            </div>
-          </a>
+        <a class="card">
+          <img src="examples/pattern.jpeg" />
+          <div class="card-body">
+            <div class="title">KODAK EKTAR - ISO 100 - 35MM - ЦВЕТНАЯ</div>
+            <div class="price">UZS 260000</div>
+          </div>
+        </a>
 
-          <a class="card">
-            <img src="examples/pattern.jpeg" />
-            <div class="card-body">
-              <div class="title">KODAK GOLD - ISO 200 - 120MM - ЦВЕТНАЯ</div>
-              <div class="price">UZS 170000</div>
-            </div>
-          </a>
 
-          <a class="card">
-            <img src="examples/pattern.jpeg" />
-            <div class="card-body">
-              <div class="title">
-                KODAK VISION 3 - ISO 250 - 120MM - ЦВЕТНАЯ
-              </div>
-              <div class="price">UZS 170000</div>
-            </div>
-          </a>
 
-          <a class="card card-disabled" href="kodak-pro-image-100-35mm.html">
-            <img src="examples/kodak-pro-image-100-35mm/pic0.jpeg" />
-            <div class="card-body">
-              <div class="title">
-                KODAK PRO IMAGE - ISO 100 - 35MM - ЦВЕТНАЯ
-              </div>
-              <div class="price">РАСПРОДАНО <s>UZS 190000</s></div>
+        <a class="card">
+          <img src="examples/pattern.jpeg" />
+          <div class="card-body">
+            <div class="title">
+              LOMOCHROME PURPLE XR - ISO 100-400 - 35MM - ЦВЕТНАЯ
             </div>
-          </a>
+            <div class="price">UZS 210000</div>
+          </div>
+        </a>
 
-          <a class="card card-disabled" href="kodak-tri-x-400-35mm-bw.html">
-            <img src="examples/kodak-tri-x-400-35mm-bw/pic0.jpeg" />
-            <div class="card-body">
-              <div class="title">
-                KODAK TRI-X - ISO 400 - 35MM - ЧЁРНО-БЕЛАЯ
-              </div>
-              <div class="price">РАСПРОДАНО <s>UZS 180000</s></div>
-            </div>
-          </a>
+        <a class="card">
+          <img src="examples/pattern.jpeg" />
+          <div class="card-body">
+            <div class="title">KODAK PORTRA - ISO 400 - 35MM - ЦВЕТНАЯ</div>
+            <div class="price">UZS 270000</div>
+          </div>
+        </a>
 
-          <a class="card card-disabled">
-            <img src="examples/pattern.jpeg" />
-            <div class="card-body">
-              <div class="title">
-                LOMOCHROME PURPLE XR - ISO 100-400 - 35MM - ЦВЕТНАЯ
-              </div>
-              <div class="price">СКОРО</div>
-            </div>
-          </a>
+        <a class="card">
+          <img src="examples/pattern.jpeg" />
+          <div class="card-body">
+            <div class="title">ILFORD HP5 - ISO 400 - 35MM - ЧËРНО-БЕЛАЯ</div>
+            <div class="price">UZS 170000</div>
+          </div>
+        </a>
+      </div>
+      <h2>120MM</h2>
+      <div class="grid">
+        <a class="card">
+          <img src="examples/pattern.jpeg" />
+          <div class="card-body">
+            <div class="title">KODAK PORTRA - ISO 400 - 120MM - ЦВЕТНАЯ</div>
+            <div class="price">UZS 260000</div>
+          </div>
+        </a>
 
-          <a class="card card-disabled">
-            <img src="examples/pattern.jpeg" />
-            <div class="card-body">
-              <div class="title">KODAK PORTRA - ISO 400 - 35MM - ЦВЕТНАЯ</div>
-              <div class="price">СКОРО</div>
-            </div>
-          </a>
+        <a class="card">
+          <img src="examples/pattern.jpeg" />
+          <div class="card-body">
+            <div class="title">KODAK GOLD - ISO 200 - 120MM - ЦВЕТНАЯ</div>
+            <div class="price">UZS 170000</div>
+          </div>
+        </a>
 
-          <a class="card card-disabled">
-            <img src="examples/pattern.jpeg" />
-            <div class="card-body">
-              <div class="title">ILFORD HP5 - ISO 400 - 35MM - ЧËРНО-БЕЛАЯ</div>
-              <div class="price">СКОРО</div>
+        <a class="card">
+          <img src="examples/pattern.jpeg" />
+          <div class="card-body">
+            <div class="title">
+              KODAK VISION 3 - ISO 250 - 120MM - ЦВЕТНАЯ
             </div>
-          </a>
+            <div class="price">UZS 170000</div>
+          </div>
+        </a>
+      </div>
+      <h2>АРХИВ</h2>
+      <div class="grid">
+        <a class="card card-disabled" href="kodak-pro-image-100-35mm.html">
+          <img src="examples/kodak-pro-image-100-35mm/pic0.jpeg" />
+          <div class="card-body">
+            <div class="title">
+              KODAK PRO IMAGE - ISO 100 - 35MM - ЦВЕТНАЯ
+            </div>
+            <div class="price">РАСПРОДАНО <s>UZS 190000</s></div>
+          </div>
+        </a>
 
-          <a class="card card-disabled">
-            <img src="examples/pattern.jpeg" />
-            <div class="card-body">
-              <div class="title">KODAK EKTAR - ISO 100 - 35MM - ЦВЕТНАЯ</div>
-              <div class="price">СКОРО</div>
+        <a class="card card-disabled" href="kodak-tri-x-400-35mm-bw.html">
+          <img src="examples/kodak-tri-x-400-35mm-bw/pic0.jpeg" />
+          <div class="card-body">
+            <div class="title">
+              KODAK TRI-X - ISO 400 - 35MM - ЧЁРНО-БЕЛАЯ
             </div>
-          </a>
-        </div>
-      </main>
-    </div>
-  </body>
+            <div class="price">РАСПРОДАНО <s>UZS 180000</s></div>
+          </div>
+        </a>
+      </div>
+    </main>
+  </div>
+</body>
+
 </html>
